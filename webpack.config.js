@@ -1,6 +1,6 @@
-module.exports = {
-    //...
-    devServer: {
-      hot: true
-    }
-  };
+// module.exports = {
+//     //...
+//     devServer: {
+//       hot: true
+//     }
+//   };
