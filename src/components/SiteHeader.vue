@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-gray-900">
+  <header class="bg-gray-900 sm:flex sm:items-center sm:justify-between">
       <div class="flex justify-between px-4 py-3">
         <div>
           <svg
@@ -26,7 +26,7 @@
         </div>
 
         <div class="flex">
-          <button @click="toggle" type="button" class="px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white">
+          <button @click="toggle" type="button" class="px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white sm:hidden">
             <svg
               class="h-6 w-6 fill-current"
               xmlns="http://www.w3.org/2000/svg"
@@ -48,25 +48,23 @@
         </div>
       </div>
 
-      <nav v-show="isOpen">
-        <div class="px-2 pt-2 pb-5 border-b border-gray-800">
-          <a href="#" class="block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800">List of property</a>
-          <a href="#" class="mt-3 px-3 py-1 rounded block font-semibold text-white hover:bg-gray-800">Trips</a>
-          <a href="#" class="mt-3 px-3 py-1 rounded block font-semibold text-white hover:bg-gray-800">Messages</a>
+      <nav class="sm:flex sm:items-center sm:px-4" :class="{'hidden': !isOpen, 'block': isOpen}">
+        <div class="px-2 pt-2 pb-5 border-b border-gray-800 sm:flex sm:border-b-0 sm:py-0 sm:px-0">
+          <a href="#" class="block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:mt-1 sm:px-4 sm:ml-2">List of property</a>
+          <a href="#" class="mt-1 px-3 py-1 rounded block font-semibold text-white hover:bg-gray-800 sm:mt-1 sm:px-4 sm:ml-2">Trips</a>
+          <a href="#" class="mt-1 px-3 py-1 rounded block font-semibold text-white hover:bg-gray-800 sm:mt-1 sm:px-4 sm:ml-2">Messages</a>
         </div>
-        <div class="px-5 py-5">
+        <div class="px-5 py-5 sm:py-0 sm:ml-4 sm:px-0">
           <div class="flex items-center">
             <img
-            class="h-10 w-10 object-cover rounded-full border-2 border-gray-600"
+            class="h-10 w-10 object-cover rounded-full border-2 border-gray-600 sm:h-8 sm:w-8"
               src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=50&h=50&q=80&crop=faces"
               alt="avatar"
               srcset=""
-            />
-            <!-- <img src="https://source.unsplash.com/random/100x100/?face" alt="" srcset=""> -->
-            <!-- <img src="http://unsplash.it/50/50?face" alt="" srcset=""> -->
-            <span class="ml-4 text-gray-200 font-semibold">Isla Schoger</span>
+            />            
+            <span class="ml-4 text-gray-200 font-semibold sm:hidden">Isla Schoger</span>
           </div>
-         <div class="mt-5">
+         <div class="mt-5 sm:hidden">
             <a href="http://" class="block text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer"
               >Account settings</a
             >

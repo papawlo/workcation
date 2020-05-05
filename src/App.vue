@@ -2,20 +2,23 @@
   <div id="app" class="min-h-screen bg-gray-200 antialiased">
     <SiteHeader />
     <SearchFilters/>
-    <main class="px-4 py-6">
-      <h3 class="text-gray-900 text-xl">Los Angeles</h3>
-      <p class="text-gray-600">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
-        obcaecati nemo deserunt veniam. Commodi ipsum laborum molestias ullam
-        sunt libero.
-      </p>
-      <div class="mt-5">
-        <div>
-          <div>
+    <main class="py-6">
+      <div class="px-4">
+        <h3 class="text-gray-900 text-xl">Los Angeles</h3>
+        <p class="text-gray-600">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+          obcaecati nemo deserunt veniam. Commodi ipsum laborum molestias ullam
+          sunt libero.
+        </p>
+      </div>
+      <div class="mt-6 sm:overflow-x-auto">
+      <div class="px-4 sm:flex sm:-ml-2 sm:pb-8">
+        <div v-for="index in 4" :key="index" :class="{'mt-10 sm:ml-4':index>1}" class="sm:mt-0 sm:max-w-xs sm:w-full sm:flex-shrink-0 sm:px-2">
+          <div class="relative pb-5/6">
             <img
               src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=50"
               alt
-              class="rounded-lg shadow-md h-64"
+              class="absolute inset-0 h-full rounded-lg shadow-md object-cover"
             />
           </div>
           <div class="relative px-4 -mt-16">
@@ -57,6 +60,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
     </main>
   </div>
