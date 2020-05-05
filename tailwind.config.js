@@ -1,6 +1,16 @@
 module.exports = {
   theme: {
+   
     extend: {
+      screens:{
+        'xs': [
+          {'min': '360px', 'max': '767px'},
+        ]
+      },
+      spacing:{
+        '72' : '18rem',
+        '80' : '20rem'
+      },
       padding:{
         '5/6': '83.333333%'
       },
