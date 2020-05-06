@@ -52,98 +52,133 @@
       class="sm:flex sm:items-center sm:px-4 xl:flex-1 xl:justify-between"
       :class="{'hidden': !isOpen, 'block': isOpen}"
     >
-
       <!-- searchbox -->
-      
-        <div class="hidden xl:block xl:relative xl:max-w-xs xl:w-full">
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3">
-            <svg
-              class="h-6 w-6 fill-current text-gray-600"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M16.32 14.9l1.1 1.1c.4-.02.83.13 1.14.44l3 3a1.5 1.5 0 0 1-2.12 2.12l-3-3a1.5 1.5 0 0 1-.44-1.14l-1.1-1.1a8 8 0 1 1 1.41-1.41l.01-.01zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
-              />
-            </svg>
-          </div>
-          <input
-            class="block w-full border border-transparent bg-gray-300 text-gray-900 focus:outline-none focus:bg-gray-200 focus:border-gray-400  rounded-lg pl-10 pr-4 py-2"
-            type="text"
-            placeholder="Search by keywords"
-          />
+
+      <div class="hidden xl:block xl:relative xl:max-w-xs xl:w-full">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+          <svg
+            class="h-6 w-6 fill-current text-gray-600"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.32 14.9l1.1 1.1c.4-.02.83.13 1.14.44l3 3a1.5 1.5 0 0 1-2.12 2.12l-3-3a1.5 1.5 0 0 1-.44-1.14l-1.1-1.1a8 8 0 1 1 1.41-1.41l.01-.01zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z"
+            />
+          </svg>
         </div>
+        <input
+          class="block w-full border border-transparent bg-gray-300 text-gray-900 focus:outline-none focus:bg-gray-200 focus:border-gray-400 rounded-lg pl-10 pr-4 py-2"
+          type="text"
+          placeholder="Search by keywords"
+        />
+      </div>
 
       <!-- end searchbox -->
       <div class="sm:flex sm:items-center">
-        
         <!-- nav links -->
         <div class="px-2 pt-2 pb-5 border-b border-gray-800 sm:flex sm:border-b-0 sm:py-0 sm:px-0">
           <a
             href="#"
-            class="block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:mt-1 sm:px-4 sm:ml-2 xl:text-gray-900"
+            class="block px-3 py-1 rounded font-semibold text-white hover:bg-gray-800 sm:mt-1 sm:px-4 sm:ml-2 xl:text-gray-900 xl:hover:bg-gray-200"
           >List of property</a>
           <a
             href="#"
-            class="mt-1 px-3 py-1 rounded block font-semibold text-white hover:bg-gray-800 sm:mt-1 sm:px-4 sm:ml-2 xl:text-gray-900"
+            class="mt-1 px-3 py-1 rounded block font-semibold text-white hover:bg-gray-800 sm:mt-1 sm:px-4 sm:ml-2 xl:text-gray-900 xl:hover:bg-gray-200"
             xl:text-gray-900
           >Trips</a>
           <a
             href="#"
-            class="mt-1 px-3 py-1 rounded block font-semibold text-white hover:bg-gray-800 sm:mt-1 sm:px-4 sm:ml-2 xl:text-gray-900"
+            class="mt-1 px-3 py-1 rounded block font-semibold text-white hover:bg-gray-800 sm:mt-1 sm:px-4 sm:ml-2 xl:text-gray-900 xl:hover:bg-gray-200"
           >Messages</a>
         </div>
         <!-- end nav links -->
-        
+
         <!-- profile -->
-        <div class="px-5 py-5 sm:py-0 sm:ml-4 sm:px-0">
-          <div class="flex items-center">
+        <div class="relative px-5 py-5 sm:py-0 sm:ml-4 sm:px-0">
+          <div class="flex items-center sm:hidden">
             <img
-              class="h-10 w-10 object-cover rounded-full border-2 border-gray-600 sm:h-8 sm:w-8 xl:border-gray-600"
+              class="h-10 w-10 object-cover rounded-full border-2 border-gray-600"
               src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=50&h=50&q=80&crop=faces"
               alt="avatar"
-              srcset
             />
             <span class="ml-4 text-gray-200 font-semibold sm:hidden">Isla Schoger</span>
           </div>
+
           <div class="mt-5 sm:hidden">
             <a
-              href="http://"
+              href="#account"
               class="block text-gray-400 hover:text-white"
-              target="_blank"
               rel="noopener noreferrer"
             >Account settings</a>
             <a
-              href="http://"
+              href="#support"
               class="mt-3 block text-gray-400 hover:text-white"
-              target="_blank"
               rel="noopener noreferrer"
             >Suport</a>
             <a
-              href="http://"
+              href="#sign-out"
               class="mt-3 block text-gray-400 hover:text-white"
-              target="_blank"
               rel="noopener noreferrer"
             >Sign out</a>
           </div>
+
+          <Dropdown class="hidden sm:block">
+            <template #trigger="{ hasFocus, isOpen }">
+              <span
+                class="block h-8 w-8 overflow-hidden rounded-full border-2 outline-none"
+                :class="[hasFocus || isOpen? 'border-gray-400' : 'border-gray-600 xl:border-gray-300']"
+              >
+                <img
+                  class="h-full w-full object-cover"
+                  src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=50&h=50&q=80&crop=faces"
+                  alt="avatar"
+                />
+              </span>
+            </template>
+
+            <!-- dropdown -->
+            <template #dropdown>
+              <div class="mt-3 py-2 xl:border l bg-white w-48 rounded-lg shadow-lg">
+                <a
+                  href="#account"
+                  class="block text-gray-800 px-4 py-2 hover:text-white hover:bg-indigo-500 focus:bg-indigo-500 focus:text-white"
+                  rel="noopener noreferrer"
+                >Account settings</a>
+                <a
+                  href="#support"
+                  class="block text-gray-800 px-4 py-2 hover:text-white hover:bg-indigo-500 focus:bg-indigo-500 focus:text-white mt-0"
+                  rel="noopener noreferrer"
+                >Suport</a>
+                <a
+                  href="#sign-out"
+                  class="block text-gray-800 px-4 py-2 hover:text-white hover:bg-indigo-500 focus:bg-indigo-500 focus:text-white mt-0"
+                  rel="noopener noreferrer"
+                >Sign out</a>
+              </div>
+            </template>
+            <!-- end dropdown -->
+          </Dropdown>
         </div>
         <!-- end profile -->
-        
       </div>
     </nav>
   </header>
 </template>
 
 <script>
+import Dropdown from "@/components/Dropdown";
+
 export default {
   name: "SiteHeader",
+  components: { Dropdown },
   props: {},
   data() {
     return {
       isOpen: false
     };
   },
+
   methods: {
     toggle() {
       this.isOpen = !this.isOpen;
@@ -151,6 +186,7 @@ export default {
   }
 };
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
